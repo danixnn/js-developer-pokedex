@@ -10,6 +10,7 @@ function convertPokemonToLi(pokemon) {
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
+            <span class="height">Altura: ${pokemon.height/10} metros</span>
 
             <div class="detail">
                 <ol class="types">
@@ -19,6 +20,22 @@ function convertPokemonToLi(pokemon) {
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
+
+            <br>
+
+            <ol class="nomestats">
+                <li>HP</li>
+                <li>AT</li>
+                <li>DF</li>
+                <li>SA</li>
+                <li>SD</li>
+                <li>SP</li>
+            </ol>
+
+            <ol class="stats">
+                ${pokemon.stats.map((stat) => `<li class="stat ${stat}"> ${stat}</li>`).join('')}
+            </ol>
+
         </li>
     `
 }
